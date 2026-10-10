@@ -16,7 +16,7 @@
 </p>
 
 <p align="center">
-  <a href="https://devfolio.co"><img src="https://img.shields.io/badge/Devfolio-CodeStorm_2026:_FutureForge-3770FF?style=for-the-badge&amp;logo=devpost&amp;logoColor=white&amp;labelColor=101827" alt="Devfolio CodeStorm 2026: FutureForge"></a>
+  <a href="https://devfolio.co/projects/bitwhisper-77cc"><img src="https://img.shields.io/badge/Devfolio-CodeStorm_2026:_FutureForge-3770FF?style=for-the-badge&amp;logo=devpost&amp;logoColor=white&amp;labelColor=101827" alt="Devfolio CodeStorm 2026: FutureForge"></a>
   <a href="#development"><img src="https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&amp;logo=react&amp;logoColor=61DAFB&amp;labelColor=101827" alt="React 18"></a>
   <a href="#development"><img src="https://img.shields.io/badge/Vite-5.0-646CFF?style=for-the-badge&amp;logo=vite&amp;logoColor=646CFF&amp;labelColor=101827" alt="Vite 5.0"></a>
   <a href="#development"><img src="https://img.shields.io/badge/TailwindCSS-3.3-06B6D4?style=for-the-badge&amp;logo=tailwindcss&amp;logoColor=06B6D4&amp;labelColor=101827" alt="Tailwind CSS"></a>
@@ -379,7 +379,7 @@ The BitWhisper platform was conceptualized, designed, and solo-engineered by:
 ### 🏆 Hackathon Details
 
 - **Hackathon**: CodeStorm 2026: FutureForge
-- **Platform**: [Devfolio](https://devfolio.co)
+- **Platform**: [Devfolio Project Showcase](https://devfolio.co/projects/bitwhisper-77cc)
 - **Built By**: Jose Regish J ([@hackerjose25](https://github.com/hackerjose25))
 - **Track**: Decentralized Communication, Web3 Security & Privacy
 

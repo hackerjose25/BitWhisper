@@ -111,12 +111,17 @@ const LandingPage = ({ onGetStarted }) => {
           
           {/* Top Hackathon Banner */}
           <div className="mb-8">
-            <div className="inline-flex items-center space-x-2.5 px-3.5 py-1.5 rounded-md bg-slate-900 border border-slate-800 font-mono text-xs sm:text-sm text-slate-300">
+            <a
+              href="https://devfolio.co/projects/bitwhisper-77cc"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center space-x-2.5 px-3.5 py-1.5 rounded-md bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 font-mono text-xs sm:text-sm text-slate-300 transition-colors"
+            >
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
               <span className="font-semibold text-slate-200">CodeStorm 2026: FutureForge</span>
               <span className="text-slate-600">/</span>
               <span className="text-amber-400 font-bold">Devfolio</span>
-            </div>
+            </a>
           </div>
 
           {/* Hero Branding: Big Logo with Yellow Text + Giant Headline */}
@@ -155,7 +160,7 @@ const LandingPage = ({ onGetStarted }) => {
                 </a>
 
                 <a
-                  href="https://devfolio.co"
+                  href="https://devfolio.co/projects/bitwhisper-77cc"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-slate-900 hover:bg-slate-800 active:bg-slate-950 text-slate-300 border border-slate-800 font-semibold px-5 py-4 rounded-lg flex items-center space-x-2 text-base transition-colors active:translate-y-[1px]"
