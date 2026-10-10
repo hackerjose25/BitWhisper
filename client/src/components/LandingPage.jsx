@@ -42,19 +42,6 @@ const LandingPage = ({ onGetStarted }) => {
     }
   ];
 
-  const techStack = [
-    { name: 'JavaScript', style: 'bg-[#F7DF1E] text-slate-950 border-[#E5CE1B]' },
-    { name: 'React', style: 'bg-[#20232A] text-[#61DAFB] border-[#61DAFB]/40' },
-    { name: 'HTML5', style: 'bg-[#E34F26] text-white border-[#C73E18]' },
-    { name: 'CSS3', style: 'bg-[#1572B6] text-white border-[#105E98]' },
-    { name: 'Python', style: 'bg-[#3776AB] text-[#FFD43B] border-[#2B5B84]' },
-    { name: 'Next.js', style: 'bg-black text-white border-slate-700' },
-    { name: 'MongoDB', style: 'bg-[#47A248] text-white border-[#388539]' },
-    { name: 'MySQL', style: 'bg-[#00758F] text-[#F29111] border-[#005B70]' },
-    { name: 'Blender', style: 'bg-[#EA7600] text-white border-[#C96400]' },
-    { name: 'Node.js', style: 'bg-[#339933] text-white border-[#2A802A]' },
-  ];
-
   return (
     <div className="relative min-h-screen bg-slate-950 text-slate-100 transition-colors duration-200 overflow-x-hidden font-sans flex flex-col justify-between">
       {/* 3D Canvas Background */}
@@ -226,7 +213,7 @@ const LandingPage = ({ onGetStarted }) => {
             <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
               <div>
                 <span className="font-mono text-xs uppercase tracking-widest text-amber-400 font-bold">
-                  CodeStorm 2026: FutureForge Builder
+                  CodeStorm 2026: FutureForge Solo Builder
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight mt-0.5">
                   Lead Developer Profile
@@ -236,7 +223,7 @@ const LandingPage = ({ onGetStarted }) => {
                 href="https://github.com/hackerjose25"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="self-start sm:self-auto inline-flex items-center space-x-1.5 text-xs font-mono text-slate-400 hover:text-white transition-colors bg-slate-900 px-3.5 py-2 rounded-md border border-slate-800"
+                className="self-start sm:self-auto inline-flex items-center space-x-1.5 text-xs font-mono text-slate-300 hover:text-white transition-colors bg-slate-900 px-3.5 py-2 rounded-md border border-slate-800 hover:border-slate-700"
               >
                 <Github size={14} />
                 <span>github.com/hackerjose25</span>
@@ -245,122 +232,279 @@ const LandingPage = ({ onGetStarted }) => {
             </div>
 
             {/* GitHub Profile Card */}
-            <div className="bg-[#0d1117] border border-[#30363d] rounded-xl p-6 sm:p-8 shadow-2xl">
+            <div className="bg-[#0d1117] border border-[#30363d] rounded-xl p-5 sm:p-8 shadow-2xl">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 
-                {/* Left: Avatar & Personal Info */}
-                <div className="lg:col-span-4 flex flex-col items-center sm:items-start text-center sm:text-left">
-                  <div className="relative mb-4">
+                {/* Left: Avatar & Personal Info (Clean GitHub Profile) */}
+                <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left">
+                  <div className="relative mb-4 group">
                     <img
                       src="/avatar.png"
                       alt="Jose Regish J"
-                      className="w-36 h-36 sm:w-44 sm:h-44 rounded-full border-2 border-[#30363d] shadow-xl object-cover bg-slate-900"
+                      className="w-40 h-40 sm:w-48 sm:h-48 rounded-full border-2 border-[#30363d] shadow-2xl object-cover bg-slate-900 ring-4 ring-red-500/10 group-hover:ring-red-500/30 transition-all duration-300"
                     />
-                    <div className="absolute bottom-2 right-2 w-8 h-8 rounded-full bg-[#161b22] border-2 border-[#30363d] flex items-center justify-center text-slate-300 shadow-md">
-                      <MessageSquare size={13} className="fill-slate-300" />
+                    <div 
+                      title="I'm Spiderman !"
+                      className="absolute bottom-2 right-2 w-9 h-9 rounded-full bg-[#161b22] border-2 border-[#30363d] flex items-center justify-center text-slate-300 shadow-lg cursor-pointer hover:border-slate-400 transition-colors"
+                    >
+                      <MessageSquare size={14} className="fill-slate-300 text-slate-300" />
                     </div>
                   </div>
 
-                  <h3 className="text-2xl font-bold text-white tracking-tight">
+                  <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
                     Jose Regish J
                   </h3>
                   <p className="text-sm text-slate-400 font-mono mt-0.5">
-                    hackerjose25 · he/him
+                    <span className="text-slate-300 font-semibold">hackerjose25</span> · he/him
                   </p>
-                  <p className="text-sm text-slate-300 mt-2 font-medium">
-                    I'm Spiderman !
-                  </p>
+                  
+                  {/* Status bubble */}
+                  <div className="mt-3 inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-xs text-slate-200">
+                    <span>🕷️</span>
+                    <span className="font-medium italic">"I'm Spiderman !"</span>
+                  </div>
 
-                  <a
-                    href="https://github.com/hackerjose25"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-[#21262d] hover:bg-[#30363d] text-slate-200 border border-[#30363d] px-4 py-2.5 rounded-md text-xs font-semibold transition-colors"
-                  >
-                    <Github size={14} />
-                    <span>View GitHub Profile</span>
-                  </a>
+                  {/* Visit Interactive Portfolio */}
+                  <div className="mt-6 w-full">
+                    <a
+                      href="https://jose-portfolio-pi.vercel.app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-cyan-950/60 to-slate-900 hover:from-cyan-900/60 hover:to-slate-800 text-cyan-300 border border-cyan-800/60 px-4 py-2.5 rounded-md text-xs font-semibold transition-all shadow-sm"
+                    >
+                      <ExternalLink size={14} />
+                      <span>Visit Interactive Portfolio</span>
+                    </a>
+                  </div>
+
+                  {/* Multiverse Tech Arsenal Cards (Moved to Left Column as per arrow) */}
+                  <div className="mt-5 w-full space-y-3">
+                    {/* Web3 Core */}
+                    <div className="bg-[#161b22] border border-[#30363d] rounded-lg p-3.5 flex flex-col justify-between">
+                      <div>
+                        <div className="text-xs font-bold text-cyan-300 font-mono flex items-center space-x-1.5 mb-2.5 pb-2 border-b border-[#30363d]">
+                          <span>🔗</span>
+                          <span>Web3 &amp; Blockchain Core</span>
+                        </div>
+                        {/* Row 1: 4 icons */}
+                        <div className="flex items-center justify-center gap-2 mb-2">
+                          <a href="https://soliditylang.org/" target="_blank" rel="noopener noreferrer">
+                            <img src="/icons/solidity.svg" width="36" height="36" alt="Solidity" className="hover:scale-110 transition-transform" />
+                          </a>
+                          <a href="https://ethereum.org/" target="_blank" rel="noopener noreferrer">
+                            <img src="/icons/ethereum.svg" width="36" height="36" alt="Ethereum" className="hover:scale-110 transition-transform" />
+                          </a>
+                          <a href="https://web3js.readthedocs.io/" target="_blank" rel="noopener noreferrer">
+                            <img src="/icons/web3js.svg" width="36" height="36" alt="Web3.js" className="hover:scale-110 transition-transform" />
+                          </a>
+                          <a href="https://ipfs.tech/" target="_blank" rel="noopener noreferrer">
+                            <img src="/icons/ipfs.svg" width="36" height="36" alt="IPFS" className="hover:scale-110 transition-transform" />
+                          </a>
+                        </div>
+                        {/* Row 2: 2 icons */}
+                        <div className="flex items-center justify-center gap-2 mb-2">
+                          <a href="https://hardhat.org/" target="_blank" rel="noopener noreferrer">
+                            <img src="/icons/hardhat.svg" width="36" height="36" alt="Hardhat" className="hover:scale-110 transition-transform" />
+                          </a>
+                          <a href="https://metamask.io/" target="_blank" rel="noopener noreferrer">
+                            <img src="/icons/metamask.svg" width="36" height="36" alt="MetaMask" className="hover:scale-110 transition-transform" />
+                          </a>
+                        </div>
+                      </div>
+                      <div className="text-[10px] text-slate-400 font-mono text-center pt-2 border-t border-[#30363d]/60">
+                        Solidity • Smart Contracts • EVM • DApps • DeFi
+                      </div>
+                    </div>
+
+                    {/* Frontend */}
+                    <div className="bg-[#161b22] border border-[#30363d] rounded-lg p-3.5 flex flex-col justify-between">
+                      <div>
+                        <div className="text-xs font-bold text-amber-300 font-mono flex items-center space-x-1.5 mb-2.5 pb-2 border-b border-[#30363d]">
+                          <span>⚡</span>
+                          <span>Full-Stack Frontend</span>
+                        </div>
+                        {/* Row 1: 4 icons */}
+                        <div className="flex items-center justify-center gap-2 mb-2">
+                          <a href="https://react.dev/" target="_blank" rel="noopener noreferrer">
+                            <img src="/icons/react.svg" width="36" height="36" alt="React" className="hover:scale-110 transition-transform" />
+                          </a>
+                          <a href="https://nextjs.org/" target="_blank" rel="noopener noreferrer">
+                            <img src="/icons/nextjs.svg" width="36" height="36" alt="Next.js" className="hover:scale-110 transition-transform" />
+                          </a>
+                          <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer">
+                            <img src="/icons/typescript.svg" width="36" height="36" alt="TypeScript" className="hover:scale-110 transition-transform" />
+                          </a>
+                          <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">
+                            <img src="/icons/javascript.svg" width="36" height="36" alt="JavaScript" className="hover:scale-110 transition-transform" />
+                          </a>
+                        </div>
+                        {/* Row 2: 2 icons */}
+                        <div className="flex items-center justify-center gap-2 mb-2">
+                          <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer">
+                            <img src="/icons/tailwind.svg" width="36" height="36" alt="Tailwind" className="hover:scale-110 transition-transform" />
+                          </a>
+                          <a href="https://vitejs.dev/" target="_blank" rel="noopener noreferrer">
+                            <img src="/icons/vite.svg" width="36" height="36" alt="Vite" className="hover:scale-110 transition-transform" />
+                          </a>
+                        </div>
+                      </div>
+                      <div className="text-[10px] text-slate-400 font-mono text-center pt-2 border-t border-[#30363d]/60">
+                        React.js • Next.js • TypeScript • Tailwind • Vite
+                      </div>
+                    </div>
+
+                    {/* Backend */}
+                    <div className="bg-[#161b22] border border-[#30363d] rounded-lg p-3.5 flex flex-col justify-between">
+                      <div>
+                        <div className="text-xs font-bold text-red-400 font-mono flex items-center space-x-1.5 mb-2.5 pb-2 border-b border-[#30363d]">
+                          <span>🛠️</span>
+                          <span>Backend, DB &amp; Tools</span>
+                        </div>
+                        {/* Row 1: 4 icons */}
+                        <div className="flex items-center justify-center gap-2 mb-2">
+                          <a href="https://nodejs.org/" target="_blank" rel="noopener noreferrer">
+                            <img src="/icons/nodejs.svg" width="36" height="36" alt="Node.js" className="hover:scale-110 transition-transform" />
+                          </a>
+                          <a href="https://expressjs.com/" target="_blank" rel="noopener noreferrer">
+                            <img src="/icons/express.svg" width="36" height="36" alt="Express" className="hover:scale-110 transition-transform" />
+                          </a>
+                          <a href="https://www.python.org/" target="_blank" rel="noopener noreferrer">
+                            <img src="/icons/python.svg" width="36" height="36" alt="Python" className="hover:scale-110 transition-transform" />
+                          </a>
+                          <a href="https://www.mongodb.com/" target="_blank" rel="noopener noreferrer">
+                            <img src="/icons/mongodb.svg" width="36" height="36" alt="MongoDB" className="hover:scale-110 transition-transform" />
+                          </a>
+                        </div>
+                        {/* Row 2: 2 icons */}
+                        <div className="flex items-center justify-center gap-2 mb-2">
+                          <a href="https://www.mysql.com/" target="_blank" rel="noopener noreferrer">
+                            <img src="/icons/mysql.svg" width="36" height="36" alt="MySQL" className="hover:scale-110 transition-transform" />
+                          </a>
+                          <a href="https://www.blender.org/" target="_blank" rel="noopener noreferrer">
+                            <img src="/icons/blender.svg" width="36" height="36" alt="Blender" className="hover:scale-110 transition-transform" />
+                          </a>
+                        </div>
+                      </div>
+                      <div className="text-[10px] text-slate-400 font-mono text-center pt-2 border-t border-[#30363d]/60">
+                        Node.js • Express • Python • MongoDB • MySQL
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Right: hackerjose25 / README.md Box */}
-                <div className="lg:col-span-8 bg-[#161b22] border border-[#30363d] rounded-lg p-5 sm:p-6 flex flex-col justify-between">
+                <div className="lg:col-span-8 bg-[#161b22] border border-[#30363d] rounded-xl overflow-hidden shadow-2xl flex flex-col">
                   {/* Readme Header */}
-                  <div className="flex items-center justify-between pb-3 mb-4 border-b border-[#30363d] text-xs font-mono text-slate-400">
-                    <div className="flex items-center space-x-1.5">
-                      <span className="text-slate-300 font-semibold">hackerjose25</span>
-                      <span>/</span>
-                      <span className="text-slate-400">README.md</span>
+                  <div className="bg-[#0d1117] border-b border-[#30363d] px-4 py-3 flex items-center justify-between text-xs font-mono">
+                    <div className="flex items-center space-x-2 text-slate-300">
+                      <span className="font-semibold text-slate-100">hackerjose25</span>
+                      <span className="text-slate-500">/</span>
+                      <span className="text-slate-300 font-medium">README.md</span>
+                      <span className="ml-2 text-[10px] px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">main</span>
                     </div>
-                    <Edit3 size={13} className="text-slate-500" />
+                    <a 
+                      href="https://github.com/hackerjose25"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Edit on GitHub"
+                      className="text-slate-400 hover:text-white transition-colors"
+                    >
+                      <Edit3 size={13} />
+                    </a>
                   </div>
 
-                  {/* Readme Bio */}
-                  <div className="space-y-5">
-                    <h4 className="text-base sm:text-lg font-bold text-white leading-snug">
-                      Hi, I am Jose <span className="inline-block">👋</span> A builder who enjoys creating meaningful projects and exploring new ideas.
-                    </h4>
+                  {/* Readme Body Content */}
+                  <div className="p-4 sm:p-6 space-y-6 bg-[#0d1117]/50">
+                    {/* 1. Spider-Man Profile Header Artwork */}
+                    <div className="rounded-xl overflow-hidden border border-[#30363d] shadow-xl bg-black">
+                      <img
+                        src="/spider-header.svg"
+                        alt="Jose Regish J — Spider-Man Themed Profile Header"
+                        className="w-full h-auto block select-none"
+                      />
+                    </div>
 
-                    {/* Tech Stack Badges */}
-                    <div>
-                      <p className="text-[11px] font-mono text-slate-400 uppercase tracking-wider mb-2 font-semibold">
-                        Core Tech Stack
+                    {/* 2. Spider Cyber Divider */}
+                    <div className="py-0.5">
+                      <img src="/spider-divider.svg" alt="Divider" className="w-full h-auto block opacity-90 select-none" />
+                    </div>
+
+                    {/* 3. Typing SVG Animation Banner */}
+                    <div className="flex justify-center py-1 overflow-x-auto">
+                      <img
+                        src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=16&duration=3000&pause=1000&color=00F0FF&center=true&vCenter=true&multiline=true&width=750&height=50&lines=%F0%9F%95%B7%EF%B8%8F+FULL-STACK+ENGINEER+%26+WEB3+%2F+BLOCKCHAIN+ARCHITECT;Building+Scalable+DApps%2C+Solidity+Smart+Contracts+%26+Modern+Web+Apps;29+Public+Repositories+%E2%80%A2+Loyola-ICAM+College+of+Engg+(LICET)"
+                        alt="Typing SVG"
+                        className="max-w-full h-auto"
+                      />
+                    </div>
+
+                    {/* 4. Bio Paragraph */}
+                    <div className="text-left bg-[#161b22]/70 border border-[#30363d] rounded-lg p-4 sm:p-5">
+                      <p className="text-sm sm:text-base text-slate-200 leading-relaxed font-normal">
+                        Hi there! I'm <strong className="text-white font-bold">Jose Regish J</strong> (<code className="text-cyan-400 bg-slate-900 px-1.5 py-0.5 rounded text-xs font-mono">@hackerjose25</code>) — a passionate <strong className="text-white">Full-Stack Developer</strong> and <strong className="text-white">Web3 / Blockchain Engineer</strong> studying at <strong className="text-white">Loyola-ICAM College of Engineering and Technology (LICET)</strong>, Chennai. Like Spider-Man swinging through the city, I build robust, high-performance web applications, architect decentralized protocols with <strong className="text-white">Solidity &amp; Smart Contracts</strong>, and secure digital infrastructures with razor-sharp <strong className="text-red-400">Spider-Sense</strong>.
                       </p>
-                      <div className="flex flex-wrap items-center gap-2">
-                        {techStack.map((tech, i) => (
-                          <span
-                            key={i}
-                            className={`px-2.5 py-1 rounded text-xs font-bold border ${tech.style}`}
-                          >
-                            {tech.name}
-                          </span>
-                        ))}
+                    </div>
+
+                    {/* 5. Spider Cyber Divider */}
+                    <div className="py-0.5">
+                      <img src="/spider-divider.svg" alt="Divider" className="w-full h-auto block opacity-90 select-none" />
+                    </div>
+
+                    {/* 6. Spider-Net Communique // Connect with Jose (Moved Up into the gap as per arrow) */}
+                    <div>
+                      <div className="text-center mb-3.5">
+                        <h4 className="text-sm sm:text-base font-bold text-white tracking-tight flex items-center justify-center gap-2">
+                          <span>🕷️</span>
+                          <span>SPIDER-NET COMMUNIQUE // CONNECT WITH JOSE</span>
+                        </h4>
+                        <p className="text-xs text-slate-400 italic mt-0.5 font-mono">
+                          "Building decentralized protocols, full-stack systems, or looking for an impactful engineer? Let's connect!"
+                        </p>
+                      </div>
+
+                      <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
+                        <a href="https://github.com/hackerjose25" target="_blank" rel="noopener noreferrer" className="hover:opacity-90 transition-opacity">
+                          <img src="https://img.shields.io/badge/GitHub-hackerjose25-0d1117?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+                        </a>
+                        <a href="https://jose-portfolio-pi.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:opacity-90 transition-opacity">
+                          <img src="https://img.shields.io/badge/Portfolio-Visit_Site-00f0ff?style=for-the-badge&logo=vercel&logoColor=black" alt="Portfolio" />
+                        </a>
+                        <a href="https://www.linkedin.com/in/jose-regish-9b7196350/" target="_blank" rel="noopener noreferrer" className="hover:opacity-90 transition-opacity">
+                          <img src="https://img.shields.io/badge/LinkedIn-Jose_Regish-0077b5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+                        </a>
+                        <a href="https://discord.com/users/1232590985096331319" target="_blank" rel="noopener noreferrer" className="hover:opacity-90 transition-opacity">
+                          <img src="https://img.shields.io/badge/Discord-Connect-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" />
+                        </a>
+                        <a href="https://www.instagram.com/itzz.jose_25/" target="_blank" rel="noopener noreferrer" className="hover:opacity-90 transition-opacity">
+                          <img src="https://img.shields.io/badge/Instagram-@itzz.jose__25-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" />
+                        </a>
+                        <a href="mailto:joseregish25@gmail.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-90 transition-opacity">
+                          <img src="https://img.shields.io/badge/Gmail-Contact_Me-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" />
+                        </a>
+                        <a href="https://open.spotify.com/user/317hew6gxt3kuesq7rrng254viym" target="_blank" rel="noopener noreferrer" className="hover:opacity-90 transition-opacity">
+                          <img src="https://img.shields.io/badge/Spotify-Follow-1DB954?style=for-the-badge&logo=spotify&logoColor=white" alt="Spotify" />
+                        </a>
                       </div>
                     </div>
 
-                    {/* Social Buttons */}
-                    <div>
-                      <p className="text-[11px] font-mono text-slate-400 uppercase tracking-wider mb-2 font-semibold">
-                        Connect & Reach Out
-                      </p>
-                      <div className="flex flex-wrap items-center gap-2 font-mono">
-                        <a
-                          href="https://discord.com"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="px-3.5 py-1.5 rounded bg-[#5865F2] hover:bg-[#4752C4] text-white text-xs font-bold uppercase tracking-wider transition-colors"
-                        >
-                          DISCORD
-                        </a>
-                        <a
-                          href="https://instagram.com"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="px-3.5 py-1.5 rounded bg-[#E4405F] hover:bg-[#D83653] text-white text-xs font-bold uppercase tracking-wider transition-colors"
-                        >
-                          INSTAGRAM
-                        </a>
-                        <a
-                          href="mailto:jose@example.com"
-                          className="px-3.5 py-1.5 rounded bg-[#EA4335] hover:bg-[#D93025] text-white text-xs font-bold uppercase tracking-wider transition-colors"
-                        >
-                          GMAIL
-                        </a>
-                        <a
-                          href="https://linkedin.com"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="px-3.5 py-1.5 rounded bg-[#0A66C2] hover:bg-[#084E96] text-white text-xs font-bold uppercase tracking-wider transition-colors"
-                        >
-                          LINKEDIN
-                        </a>
-                      </div>
+                    {/* 7. Spider-Footer Artwork */}
+                    <div className="rounded-xl overflow-hidden border border-[#30363d] shadow-xl bg-black">
+                      <img
+                        src="/spider-footer.svg"
+                        alt="Spider-Man Multiverse Profile Footer"
+                        className="w-full h-auto block select-none"
+                      />
                     </div>
 
-                    {/* Activity Box */}
-                    <div className="p-3 bg-[#0d1117] border border-[#30363d] rounded-md text-xs font-mono flex items-center space-x-2.5 text-emerald-400">
-                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-                      <span>CodeStorm 2026: FutureForge Submission • BitWhisper P2P Mesh</span>
+                    {/* Active Hackathon Submission Stamp */}
+                    <div className="p-3 bg-[#0d1117] border border-[#30363d] rounded-md text-xs font-mono flex items-center justify-between text-emerald-400">
+                      <div className="flex items-center space-x-2">
+                        <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+                        <span>CodeStorm 2026: FutureForge Submission • BitWhisper P2P Mesh</span>
+                      </div>
+                      <span className="text-slate-400 font-mono text-[11px] hidden sm:inline">Solidity &amp; WebRTC</span>
                     </div>
+
                   </div>
                 </div>
 

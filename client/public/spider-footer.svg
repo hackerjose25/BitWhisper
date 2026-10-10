@@ -1,0 +1,176 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 165" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="footerSpiderBg" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06080d" />
+      <stop offset="50%" stop-color="#0b0e17" />
+      <stop offset="100%" stop-color="#120914" />
+    </linearGradient>
+
+    <!-- Neon Crimson Gradient -->
+    <linearGradient id="footerCrimson" x1="100%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#7f1d1d" stop-opacity="0.5" />
+      <stop offset="50%" stop-color="#ff1744" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#ff0055" stop-opacity="0.1" />
+    </linearGradient>
+
+    <!-- Neon Cyan Gradient -->
+    <linearGradient id="footerCyan" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0052cc" stop-opacity="0.2" />
+      <stop offset="50%" stop-color="#00f0ff" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#7000ff" stop-opacity="0.1" />
+    </linearGradient>
+
+    <!-- Border Gradient -->
+    <linearGradient id="footerBorderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255, 23, 68, 0.5)" />
+      <stop offset="50%" stop-color="rgba(0, 240, 255, 0.4)" />
+      <stop offset="100%" stop-color="rgba(121, 40, 202, 0.5)" />
+    </linearGradient>
+
+    <!-- Portal Glow -->
+    <radialGradient id="portalGlow" cx="50%" cy="100%" r="50%">
+      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.3" />
+      <stop offset="45%" stop-color="#ff1744" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#06080d" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Title Gradient -->
+    <linearGradient id="footerTitleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="50%" stop-color="#e0f7fa" />
+      <stop offset="100%" stop-color="#00e5ff" />
+    </linearGradient>
+
+    <filter id="spiderNeonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <clipPath id="footerClip">
+      <rect width="920" height="165" rx="16" />
+    </clipPath>
+  </defs>
+
+  <style>
+    @keyframes webVibeMotion {
+      0% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-4px) rotate(0.4deg); }
+      100% { transform: translateY(0px) rotate(0deg); }
+    }
+    @keyframes portalPulse {
+      0%, 100% { opacity: 0.85; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.08); }
+    }
+    .web-vibe {
+      animation: webVibeMotion 6s ease-in-out infinite;
+    }
+    .portal-anim {
+      transform-origin: 460px 165px;
+      animation: portalPulse 4s ease-in-out infinite;
+    }
+    .footer-heading {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, sans-serif;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+    }
+    .footer-sub {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-weight: 500;
+    }
+  </style>
+
+  <!-- Container Box -->
+  <rect width="920" height="165" rx="16" fill="url(#footerSpiderBg)" stroke="url(#footerBorderGrad)" stroke-width="1.3" />
+
+  <!-- Multiverse Portal Glow at Center Base -->
+  <g clip-path="url(#footerClip)">
+    <circle cx="460" cy="165" r="160" fill="url(#portalGlow)" class="portal-anim" />
+
+    <!-- NYC Skyline Silhouettes in Background -->
+    <g fill="#090d16" opacity="0.85">
+      <!-- Buildings left to right -->
+      <rect x="20" y="80" width="35" height="85" />
+      <rect x="60" y="60" width="45" height="105" />
+      <line x1="82" y1="42" x2="82" y2="60" stroke="#ff1744" stroke-width="1.2" opacity="0.8" />
+      <circle cx="82" cy="40" r="1.5" fill="#ff1744" />
+
+      <rect x="110" y="90" width="30" height="75" />
+      <rect x="145" y="70" width="40" height="95" />
+      <rect x="190" y="100" width="35" height="65" />
+
+      <!-- Center background buildings (dimmer) -->
+      <rect x="230" y="115" width="50" height="50" opacity="0.6" />
+      <rect x="640" y="110" width="45" height="55" opacity="0.6" />
+
+      <!-- Buildings right -->
+      <rect x="690" y="75" width="40" height="90" />
+      <rect x="735" y="55" width="45" height="110" />
+      <line x1="757" y1="36" x2="757" y2="55" stroke="#00f0ff" stroke-width="1.2" opacity="0.8" />
+      <circle cx="757" cy="34" r="1.5" fill="#00f0ff" />
+
+      <rect x="785" y="85" width="35" height="80" />
+      <rect x="825" y="65" width="45" height="100" />
+      <rect x="875" y="95" width="30" height="70" />
+    </g>
+
+    <!-- Tiny Glowing Windows in Buildings -->
+    <g fill="#ffd700" opacity="0.3">
+      <rect x="68" y="75" width="3" height="4" />
+      <rect x="78" y="85" width="3" height="4" />
+      <rect x="88" y="75" width="3" height="4" />
+      <rect x="68" y="105" width="3" height="4" fill="#00f0ff" opacity="0.5" />
+      <rect x="745" y="70" width="3" height="4" />
+      <rect x="758" y="80" width="3" height="4" fill="#ff1744" opacity="0.6" />
+      <rect x="745" y="95" width="3" height="4" />
+      <rect x="835" y="80" width="3" height="4" />
+      <rect x="850" y="90" width="3" height="4" fill="#00f0ff" opacity="0.5" />
+    </g>
+
+    <!-- Web Strands connecting across top -->
+    <path class="web-vibe" d="M -20,30 Q 240,90 460,40 Q 680,-10 940,45" fill="none" stroke="#00f0ff" stroke-width="1.2" stroke-opacity="0.45" />
+    <path class="web-vibe" d="M -20,45 Q 260,110 500,55 Q 720,5 940,65" fill="none" stroke="#ff1744" stroke-width="0.9" stroke-opacity="0.35" />
+
+    <!-- Spider-Man Web Slinger Silhouette in Left Upper Quadrant -->
+    <g transform="translate(145, 32) scale(0.75)">
+      <!-- Web Line shot to top anchor -->
+      <line x1="0" y1="0" x2="-80" y2="-45" stroke="#ffffff" stroke-width="1.4" filter="url(#spiderNeonGlow)" />
+      <!-- Swinging Spider Body Silhouette -->
+      <ellipse cx="0" cy="0" rx="9" ry="12" fill="#ff1744" transform="rotate(-35)" />
+      <ellipse cx="6" cy="-8" rx="5" ry="6" fill="#090d16" transform="rotate(-35)" />
+      <!-- High-Tech Eye Mask glow -->
+      <polygon points="5,-11 8,-7 5,-6" fill="#00f0ff" />
+      <!-- Outstretched arm holding web -->
+      <path d="M 3,-7 L -12,-20 L -25,-28" fill="none" stroke="#ff1744" stroke-width="3" stroke-linecap="round" />
+      <!-- Trailing legs -->
+      <path d="M -4,8 L -14,24 L -8,32" fill="none" stroke="#00f0ff" stroke-width="2.6" stroke-linecap="round" />
+      <path d="M 4,6 L 8,22 L 18,28" fill="none" stroke="#ff1744" stroke-width="2.6" stroke-linecap="round" />
+    </g>
+
+    <!-- Floating Neon Spider Nodes -->
+    <circle cx="120" cy="140" r="2.5" fill="#00f0ff" opacity="0.7" />
+    <circle cx="810" cy="135" r="2.5" fill="#ff1744" opacity="0.7" />
+    <circle cx="870" cy="35" r="2" fill="#ffd700" opacity="0.6" />
+  </g>
+
+  <!-- Centered Typography & Call to Action -->
+  <g text-anchor="middle" transform="translate(460, 0)">
+    <!-- Header Text -->
+    <text x="0" y="78" fill="url(#footerTitleGrad)" font-size="21" class="footer-heading" filter="url(#spiderNeonGlow)">
+      SWING BY ANYTIME — LET'S BUILD THE EXTRAORDINARY! 🕸️
+    </text>
+
+    <!-- Subtitle Text -->
+    <text x="0" y="106" fill="#94a3b8" font-size="13.5" class="footer-sub">
+      Open for <tspan fill="#ff1744" font-weight="600">Full-Stack</tspan>, <tspan fill="#00f0ff" font-weight="600">Cybersecurity</tspan>, <tspan fill="#ffd700" font-weight="600">Web3</tspan>, and high-impact software collaborations.
+    </text>
+
+    <!-- Monospace Terminal Line -->
+    <text x="0" y="132" fill="#64748b" font-size="11" font-family="'SF Mono', Monaco, Consolas, monospace">
+      [ PROTOCOL COMPLETE // SIGNAL ENCRYPTED // READY FOR CONNECTION ]
+    </text>
+  </g>
+</svg>

@@ -1,0 +1,362 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 230" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients (Deep Carbon Obsidian, Crimson and Cyan Ambient) -->
+    <linearGradient id="spiderBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06080d" />
+      <stop offset="45%" stop-color="#0b0e17" />
+      <stop offset="85%" stop-color="#120914" />
+      <stop offset="100%" stop-color="#080d1a" />
+    </linearGradient>
+
+    <!-- Glowing Spider Crimson Gradient -->
+    <linearGradient id="crimsonNeon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff1744" />
+      <stop offset="50%" stop-color="#d50000" />
+      <stop offset="100%" stop-color="#9b0000" />
+    </linearGradient>
+
+    <!-- TASM 3D Crimson Body Gradient (Left Side - Deep Shadowed Ruby) -->
+    <linearGradient id="tasmLeftGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7a0010" />
+      <stop offset="50%" stop-color="#ba0c24" />
+      <stop offset="100%" stop-color="#e61937" />
+    </linearGradient>
+
+    <!-- TASM 3D Crimson Body Gradient (Right Side - Cyan / Silver Rim Highlight) -->
+    <linearGradient id="tasmRightGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e61937" />
+      <stop offset="50%" stop-color="#ba0c24" />
+      <stop offset="90%" stop-color="#7a0010" />
+      <stop offset="100%" stop-color="#cffafe" />
+    </linearGradient>
+
+    <!-- Title Gradient (Bright White into Spider Crimson) -->
+    <linearGradient id="titleSpiderGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="40%" stop-color="#ffebee" />
+      <stop offset="75%" stop-color="#ff5252" />
+      <stop offset="100%" stop-color="#ff1744" />
+    </linearGradient>
+
+    <!-- Outer Border Cyber Gradient -->
+    <linearGradient id="spiderBorderGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff1744" stop-opacity="0.9" />
+      <stop offset="35%" stop-color="#ff0055" stop-opacity="0.7" />
+      <stop offset="70%" stop-color="#00f0ff" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#7928ca" stop-opacity="0.9" />
+    </linearGradient>
+
+    <!-- Split Backdrop Lighting: Left Crimson, Right Cyan/Navy -->
+    <radialGradient id="tasmBackdropCrimson" cx="40%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#9b001a" stop-opacity="0.35" />
+      <stop offset="60%" stop-color="#ff1744" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#06080d" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="tasmBackdropCyan" cx="60%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#0066aa" stop-opacity="0.32" />
+      <stop offset="50%" stop-color="#00f0ff" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#06080d" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Filters for TASM Neon Glow -->
+    <filter id="tasmGlowFilter" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3.5" result="blur1" />
+      <feGaussianBlur stdDeviation="8" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur2" />
+        <feMergeNode in="blur1" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="cyanGlowFilter" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="2.5" result="blur1" />
+      <feGaussianBlur stdDeviation="6" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur2" />
+        <feMergeNode in="blur1" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="ambientSpiderGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="35" />
+    </filter>
+
+    <!-- Hexagonal Spider-Web Carbon Texture -->
+    <pattern id="hexWebGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 40 10 L 40 30 L 20 40 L 0 30 L 0 10 Z" fill="none" stroke="#ffffff" stroke-width="0.35" stroke-opacity="0.04" />
+      <line x1="20" y1="0" x2="20" y2="40" stroke="#00f0ff" stroke-width="0.3" stroke-opacity="0.03" />
+      <line x1="0" y1="10" x2="40" y2="30" stroke="#ff1744" stroke-width="0.3" stroke-opacity="0.03" />
+    </pattern>
+
+    <!-- Animated Clip Path for Typewriter Text -->
+    <clipPath id="spiderTypewriterClip">
+      <rect x="0" y="140" width="0" height="30">
+        <animate attributeName="width"
+                 values="0; 0; 570; 570; 570; 0"
+                 keyTimes="0; 0.04; 0.52; 0.88; 0.96; 1"
+                 dur="8.5s"
+                 repeatCount="indefinite" />
+      </rect>
+    </clipPath>
+
+    <!-- Clip Container for Header -->
+    <clipPath id="headerBoxClip">
+      <rect width="920" height="230" rx="16" />
+    </clipPath>
+  </defs>
+
+  <style>
+    /* TASM Organic Breathing and Pulse */
+    @keyframes tasmBreathing {
+      0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 8px rgba(255, 23, 68, 0.65));
+      }
+      50% {
+        transform: scale(1.025);
+        filter: drop-shadow(0 0 18px rgba(255, 23, 68, 0.9)) drop-shadow(0 0 24px rgba(0, 240, 255, 0.5));
+      }
+    }
+
+    /* Spider-Sense Pulse Waves */
+    @keyframes spiderPulse1 {
+      0% { r: 25px; opacity: 0.9; stroke-width: 2px; }
+      50% { opacity: 0.5; }
+      100% { r: 92px; opacity: 0; stroke-width: 0.5px; }
+    }
+    @keyframes spiderPulse2 {
+      0% { r: 15px; opacity: 1; stroke-width: 2.2px; }
+      50% { opacity: 0.6; }
+      100% { r: 80px; opacity: 0; stroke-width: 0.5px; }
+    }
+    @keyframes spiderPulse3 {
+      0% { r: 35px; opacity: 0.8; stroke-width: 1.6px; }
+      50% { opacity: 0.4; }
+      100% { r: 105px; opacity: 0; stroke-width: 0.4px; }
+    }
+
+    /* Cursor Blink */
+    @keyframes blinkSpiderCursor {
+      0%, 48% { opacity: 1; }
+      50%, 98% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    .tasm-emblem-anim {
+      transform-origin: 785px 115px;
+      animation: tasmBreathing 4.5s ease-in-out infinite;
+    }
+
+    .pulse-ring-1 {
+      animation: spiderPulse1 3.2s cubic-bezier(0.1, 0.6, 0.3, 1) infinite;
+    }
+    .pulse-ring-2 {
+      animation: spiderPulse2 3.2s cubic-bezier(0.1, 0.6, 0.3, 1) 1.1s infinite;
+    }
+    .pulse-ring-3 {
+      animation: spiderPulse3 3.2s cubic-bezier(0.1, 0.6, 0.3, 1) 2.1s infinite;
+    }
+
+    .cursor-neon {
+      animation: blinkSpiderCursor 0.85s step-end infinite;
+    }
+
+    /* Typography Classes */
+    .font-title {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, sans-serif;
+      font-weight: 900;
+      letter-spacing: -0.6px;
+    }
+    .font-sub {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+    .font-typewriter {
+      font-family: 'SF Mono', Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.2px;
+    }
+    .font-diag {
+      font-family: 'SF Mono', Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+    }
+  </style>
+
+  <!-- Main Container -->
+  <rect width="920" height="230" rx="16" fill="url(#spiderBg)" stroke="url(#spiderBorderGrad)" stroke-width="1.4" />
+
+  <!-- Hexagonal Spider-Web Carbon Texture -->
+  <rect width="920" height="230" rx="16" fill="url(#hexWebGrid)" clip-path="url(#headerBoxClip)" />
+
+  <!-- Ambient Spider Glow Orbs -->
+  <g clip-path="url(#headerBoxClip)">
+    <circle cx="120" cy="40" r="90" fill="#ff1744" opacity="0.12" filter="url(#ambientSpiderGlow)" />
+    <circle cx="785" cy="115" r="130" fill="#ff1744" opacity="0.14" filter="url(#ambientSpiderGlow)" />
+    <circle cx="450" cy="220" r="80" fill="#00f0ff" opacity="0.08" filter="url(#ambientSpiderGlow)" />
+  </g>
+
+  <!-- Left Cyber Border Accent and Spider Silk Thread -->
+  <g clip-path="url(#headerBoxClip)">
+    <rect x="36" y="44" width="4.5" height="152" rx="2.25" fill="url(#spiderBorderGrad)" opacity="0.9" />
+    <line x1="38.25" y1="44" x2="38.25" y2="196" stroke="#ffffff" stroke-width="1.2" opacity="0.8" />
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- LEFT CONTENT: NOTHING ABOVE JOSE REGISH J                -->
+  <!-- ======================================================== -->
+  <g transform="translate(58, 0)">
+    <!-- Main Title: JOSE REGISH J (NOTHING ABOVE THIS) -->
+    <text x="0" y="86" fill="url(#titleSpiderGrad)" font-size="44" class="font-title">
+      JOSE REGISH J <tspan fill="#00f0ff" font-size="34">🕷️</tspan>
+    </text>
+
+    <!-- Subtitle: Web3 and Blockchain Focus (No "Full-Stack") -->
+    <text x="0" y="122" fill="#e2e8f0" font-size="15" class="font-sub">
+      <tspan font-weight="700" fill="#ffffff">Web3 and Blockchain Engineer</tspan>
+      <tspan fill="#ff1744"> ◈ </tspan>
+      <tspan fill="#00f0ff">Solidity and Smart Contracts</tspan>
+      <tspan fill="#ff1744"> ◈ </tspan>
+      <tspan fill="#ffd700">DApps Architecture</tspan>
+    </text>
+
+    <!-- Typewriter Animated Quote Bar (No "Full-Stack", No "EVM") -->
+    <g clip-path="url(#spiderTypewriterClip)">
+      <text x="0" y="158" fill="#f1f5f9" class="font-typewriter" textLength="565" lengthAdjust="spacing">
+        &gt; Architecting decentralized Web3 protocols, Solidity smart contracts and modern DApps.
+      </text>
+    </g>
+
+    <!-- Blinking Neon Cyan Cursor tracking typing edge -->
+    <g>
+      <animateTransform attributeName="transform" type="translate"
+                        values="0,0; 0,0; 568,0; 568,0; 568,0; 0,0"
+                        keyTimes="0; 0.04; 0.52; 0.88; 0.96; 1"
+                        dur="8.5s"
+                        repeatCount="indefinite" />
+      <rect x="0" y="144" width="2.5" height="17" fill="#00f0ff" rx="1.2" class="cursor-neon" filter="url(#cyanGlowFilter)">
+        <animate attributeName="opacity"
+                 values="1; 1; 0; 0; 1"
+                 keyTimes="0; 0.45; 0.5; 0.95; 1"
+                 dur="0.85s"
+                 repeatCount="indefinite" />
+      </rect>
+    </g>
+
+    <!-- Live Telemetry Strip (No "Full-Stack", No "EVM") -->
+    <g transform="translate(0, 194)">
+      <!-- Item 1: Spider Sense -->
+      <circle cx="4" cy="-3" r="3" fill="#ff1744" />
+      <text x="12" y="0" fill="#94a3b8" class="font-diag">
+        <tspan fill="#ff1744" font-weight="700">SPIDER-SENSE:</tspan> 100% ONLINE
+      </text>
+
+      <!-- Item 2: Blockchain / Solidity -->
+      <circle cx="180" cy="-3" r="3" fill="#00f0ff" />
+      <text x="188" y="0" fill="#94a3b8" class="font-diag">
+        <tspan fill="#00f0ff" font-weight="700">BLOCKCHAIN:</tspan> SOLIDITY
+      </text>
+
+      <!-- Item 3: DApps and Contracts -->
+      <circle cx="340" cy="-3" r="3" fill="#ffd700" />
+      <text x="348" y="0" fill="#94a3b8" class="font-diag">
+        <tspan fill="#ffd700" font-weight="700">CONTRACTS:</tspan> AUDITED AND DEPLOYED
+      </text>
+    </g>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- RIGHT CONTENT: AUTHENTIC THE AMAZING SPIDER-MAN LOGO     -->
+  <!-- Matching user reference image with split crimson/cyan    -->
+  <!-- ======================================================== -->
+  <g transform="translate(785, 115)">
+    <!-- 1. Ambient Expanding Spider-Sense Pulse Waves -->
+    <circle cx="0" cy="0" r="30" fill="none" stroke="#ff1744" opacity="0" class="pulse-ring-1" />
+    <circle cx="0" cy="0" r="20" fill="none" stroke="#00f0ff" opacity="0" class="pulse-ring-2" />
+    <circle cx="0" cy="0" r="40" fill="none" stroke="#ff0055" opacity="0" class="pulse-ring-3" />
+
+    <!-- 2. Split Dual Ambient Backdrop (Left Crimson, Right Cyan like reference photo) -->
+    <rect x="-85" y="-85" width="85" height="175" fill="url(#tasmBackdropCrimson)" opacity="0.8" />
+    <rect x="0" y="-85" width="85" height="175" fill="url(#tasmBackdropCyan)" opacity="0.8" />
+    <line x1="0" y1="-85" x2="0" y2="90" stroke="#00f0ff" stroke-width="0.5" stroke-opacity="0.3" stroke-dasharray="2 3" />
+
+    <!-- 3. THE ICONIC THE AMAZING SPIDER-MAN (TASM) EMBLEM -->
+    <g class="tasm-emblem-anim" filter="url(#tasmGlowFilter)">
+
+      <!-- ================= LEFT HALF (DEEP CRIMSON SHADOW) ================= -->
+      <g>
+        <!-- Left Head and Fangs -->
+        <path d="M 0,-21 C -1.5,-21 -3,-24 -3.8,-25.5 C -3.2,-23.5 -2.2,-21 -3.5,-18 L 0,-18 Z"
+              fill="url(#tasmLeftGrad)" stroke="#ff1744" stroke-width="0.3" />
+
+        <!-- Left Thorax and Abdomen -->
+        <path d="M 0,-18 C -6,-15 -8,-8 -7.5,-2 C -7,3 -5.5,6 -6.5,10 C -7.5,15 -8,22 0,38 Z"
+              fill="url(#tasmLeftGrad)" stroke="#ff1744" stroke-width="0.3" />
+
+        <!-- Leg 1 (Top Left) -->
+        <path d="M -3.5,-18 C -12,-32 -24,-48 -35,-58 C -36.5,-59.5 -36,-61.5 -34,-61.5 C -32,-61.5 -28,-68 -25.5,-77.5 C -25,-79 -24.2,-78.5 -24.8,-76.5 C -27,-66 -30,-58 -29,-56 C -26,-50 -16,-34 -1.5,-16 Z"
+              fill="url(#tasmLeftGrad)" stroke="#ff1744" stroke-width="0.4" />
+
+        <!-- Leg 2 (Upper-Mid Left) -->
+        <path d="M -5.5,-13 C -18,-20 -36,-30 -51,-38 C -53,-39 -52,-40.5 -50,-40.5 C -46,-40.5 -41,-46 -37.5,-53 C -36.8,-54.5 -36.2,-54 -36.8,-52.5 C -40,-45 -45,-38 -43,-36 C -38,-31 -22,-20 -4,-8 Z"
+              fill="url(#tasmLeftGrad)" stroke="#ff1744" stroke-width="0.4" />
+
+        <!-- Leg 3 (Lower-Mid Left - Outer Long Stiletto) -->
+        <path d="M -6,-3 C -20,0 -38,0 -54,1 C -56.5,1.2 -56.5,3.5 -54.5,4 C -48,6 -35,28 -28,52 C -25,62 -22.5,78 -21.2,86.5 C -20.8,88.5 -21.8,88.5 -22.2,86 C -25,72 -32,48 -38,32 C -44,16 -46,9 -44,8 C -38,6 -24,4 -4,1 Z"
+              fill="url(#tasmLeftGrad)" stroke="#ff1744" stroke-width="0.4" />
+
+        <!-- Leg 4 (Bottom-Most Left - Inner Longest Stiletto) -->
+        <path d="M -5,6 C -10,8 -16,12 -18,18 C -20,24 -18,36 -16,52 C -13.5,70 -10,88 -8,100 C -7.6,102 -8.4,102 -8.8,99.5 C -11,85 -15,64 -17,46 C -19,30 -18,22 -14,16 C -11,12 -7,9 -2.5,8 Z"
+              fill="url(#tasmLeftGrad)" stroke="#ff1744" stroke-width="0.4" />
+
+        <!-- 3D Bevel Ridge Lines (Left Side) -->
+        <path d="M -2,-17 L -32,-59 L -25,-76" fill="none" stroke="#ff3d5a" stroke-width="0.6" opacity="0.6" />
+        <path d="M -4,-10 L -48,-38 L -38,-51" fill="none" stroke="#ff3d5a" stroke-width="0.6" opacity="0.6" />
+        <path d="M -5,1 L -52,3 L -22,86" fill="none" stroke="#ff3d5a" stroke-width="0.6" opacity="0.6" />
+        <path d="M -3,7 L -17,20 L -8.5,98" fill="none" stroke="#ff3d5a" stroke-width="0.6" opacity="0.6" />
+      </g>
+
+      <!-- ================= RIGHT HALF (CYAN / SILVER RIM LIGHTING) ================= -->
+      <g>
+        <!-- Right Head and Fangs -->
+        <path d="M 0,-21 C 1.5,-21 3,-24 3.8,-25.5 C 3.2,-23.5 2.2,-21 3.5,-18 L 0,-18 Z"
+              fill="url(#tasmRightGrad)" stroke="#00f0ff" stroke-width="0.5" />
+
+        <!-- Right Thorax and Abdomen -->
+        <path d="M 0,-18 C 6,-15 8,-8 7.5,-2 C 7,3 5.5,6 6.5,10 C 7.5,15 8,22 0,38 Z"
+              fill="url(#tasmRightGrad)" stroke="#00f0ff" stroke-width="0.5" />
+
+        <!-- Leg 1 (Top Right) -->
+        <path d="M 3.5,-18 C 12,-32 24,-48 35,-58 C 36.5,-59.5 36,-61.5 34,-61.5 C 32,-61.5 28,-68 25.5,-77.5 C 25,-79 24.2,-78.5 24.8,-76.5 C 27,-66 30,-58 29,-56 C 26,-50 16,-34 1.5,-16 Z"
+              fill="url(#tasmRightGrad)" stroke="#00f0ff" stroke-width="0.5" />
+
+        <!-- Leg 2 (Upper-Mid Right) -->
+        <path d="M 5.5,-13 C 18,-20 36,-30 51,-38 C 53,-39 52,-40.5 50,-40.5 C 46,-40.5 41,-46 37.5,-53 C 36.8,-54.5 36.2,-54 36.8,-52.5 C 40,-45 45,-38 43,-36 C 38,-31 22,-20 4,-8 Z"
+              fill="url(#tasmRightGrad)" stroke="#00f0ff" stroke-width="0.5" />
+
+        <!-- Leg 3 (Lower-Mid Right - Outer Long Stiletto) -->
+        <path d="M 6,-3 C 20,0 38,0 54,1 C 56.5,1.2 56.5,3.5 54.5,4 C 48,6 35,28 28,52 C 25,62 22.5,78 21.2,86.5 C 20.8,88.5 21.8,88.5 22.2,86 C 25,72 32,48 38,32 C 44,16 46,9 44,8 C 38,6 24,4 4,1 Z"
+              fill="url(#tasmRightGrad)" stroke="#00f0ff" stroke-width="0.5" />
+
+        <!-- Leg 4 (Bottom-Most Right - Inner Longest Stiletto) -->
+        <path d="M 5,6 C 10,8 16,12 18,18 C 20,24 18,36 16,52 C 13.5,70 10,88 8,100 C 7.6,102 8.4,102 8.8,99.5 C 11,85 15,64 17,46 C 19,30 18,22 14,16 C 11,12 7,9 2.5,8 Z"
+              fill="url(#tasmRightGrad)" stroke="#00f0ff" stroke-width="0.5" />
+
+        <!-- 3D Bevel Ridge and Specular Rim Lines (Right Side matching reference photo) -->
+        <path d="M 2,-17 L 32,-59 L 25,-76" fill="none" stroke="#cffafe" stroke-width="0.8" opacity="0.85" />
+        <path d="M 4,-10 L 48,-38 L 38,-51" fill="none" stroke="#cffafe" stroke-width="0.8" opacity="0.85" />
+        <path d="M 5,1 L 52,3 L 22,86" fill="none" stroke="#cffafe" stroke-width="0.8" opacity="0.85" />
+        <path d="M 3,7 L 17,20 L 8.5,98" fill="none" stroke="#cffafe" stroke-width="0.8" opacity="0.85" />
+      </g>
+
+      <!-- Center Spine Highlight Dividing Line -->
+      <line x1="0" y1="-21" x2="0" y2="38" stroke="#ffffff" stroke-width="0.8" opacity="0.8" />
+    </g>
+  </g>
+</svg>
