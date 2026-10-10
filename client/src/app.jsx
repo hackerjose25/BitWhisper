@@ -20,8 +20,18 @@ const getSignalingServerUrl = () => {
   if (import.meta.env.VITE_WEBSOCKET_URL) {
     return import.meta.env.VITE_WEBSOCKET_URL;
   }
-  const hostname = window.location.hostname || 'localhost';
-  return `wss://${hostname}:3001`;
+  // When running on standalone Vite dev server (port 5173), fallback to standalone signaling server on port 3001
+  if (typeof window !== 'undefined' && window.location.port === '5173') {
+    const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+    const hostname = window.location.hostname || 'localhost';
+    return `${protocol}//${hostname}:3001`;
+  }
+  // When deployed behind Vercel or running multi-service routing to /api
+  if (typeof window !== 'undefined' && window.location.host) {
+    const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+    return `${protocol}//${window.location.host}/api`;
+  }
+  return 'wss://localhost:3001';
 };
 
 const SIGNALING_SERVER = getSignalingServerUrl();

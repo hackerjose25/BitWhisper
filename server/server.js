@@ -17,30 +17,34 @@ const rooms = new Map();
 let server;
 
 // --- Create Server ---
-// In production, we create a plain HTTP server. Render handles HTTPS.
-// In development, we create an HTTPS server with our self-signed certs.
-if (IS_PRODUCTION) {
-  console.log('Running in PRODUCTION mode (http)...');
-  server = http.createServer((req, res) => {
-    res.writeHead(200);
-    res.end('WebSocket Server Running (HTTP)');
-  });
-} else {
+// In production or on Vercel/cloud environments, we create an HTTP server (reverse proxy handles SSL).
+// In standalone local dev, we create an HTTPS server if self-signed certs are present.
+const certsExist = fs.existsSync('./localhost-key.pem') && fs.existsSync('./localhost.pem');
+const shouldRunHttps = !IS_PRODUCTION && !process.env.VERCEL && certsExist;
+
+if (shouldRunHttps) {
   console.log('Running in DEVELOPMENT mode (https)...');
   try {
     server = https.createServer({
       key: fs.readFileSync('./localhost-key.pem'),
       cert: fs.readFileSync('./localhost.pem')
     }, (req, res) => {
-      res.writeHead(200);
-      res.end('WebSocket Server Running (HTTPS)');
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ status: 'ok', service: 'bitwhisper-signaling' }));
     });
   } catch (e) {
-    console.error('\n🔴 FAILED TO START HTTPS SERVER 🔴');
-    console.error('Did you forget to copy "localhost-key.pem" and "localhost.pem" into the /server directory?');
-    console.error('Run `mkcert localhost 127.0.0.1 ::1` and copy the files.\n');
-    process.exit(1);
+    console.warn('⚠️ Could not start HTTPS server, falling back to HTTP:', e.message);
+    server = http.createServer((req, res) => {
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ status: 'ok', service: 'bitwhisper-signaling' }));
+    });
   }
+} else {
+  console.log('Running in HTTP mode (Vercel / Production / Reverse Proxy)...');
+  server = http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ status: 'ok', service: 'bitwhisper-signaling' }));
+  });
 }
 
 const wss = new WebSocket.Server({ server });
