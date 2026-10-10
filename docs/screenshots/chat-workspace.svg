@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="100%" height="100%" fill="none">
+  <defs>
+    <linearGradient id="cwBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16"/>
+      <stop offset="100%" stop-color="#0e1726"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Browser Frame -->
+  <rect width="1000" height="600" rx="12" fill="url(#cwBg)" stroke="#1e293b" stroke-width="2"/>
+  
+  <!-- Browser Header -->
+  <rect width="1000" height="38" rx="12" fill="#0f172a"/>
+  <circle cx="25" cy="19" r="5" fill="#ef4444"/>
+  <circle cx="45" cy="19" r="5" fill="#f59e0b"/>
+  <circle cx="65" cy="19" r="5" fill="#10b981"/>
+  <rect x="220" y="8" width="560" height="22" rx="6" fill="#1e293b"/>
+  <text x="500" y="23" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">https://localhost:5173/#general — Encrypted Mesh (3 Peers Active)</text>
+
+  <!-- Left Sidebar (Servers / Rooms) -->
+  <g transform="translate(0, 38)">
+    <rect width="220" height="562" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+    
+    <!-- Workspace Brand -->
+    <text x="20" y="32" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="15" font-weight="700" fill="#f8fafc">Bit<tspan fill="#38bdf8">Whisper</tspan> Mesh</text>
+    <rect x="155" y="18" width="50" height="18" rx="9" fill="rgba(16, 185, 129, 0.2)"/>
+    <text x="180" y="31" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="600" fill="#10b981" text-anchor="middle">ONLINE</text>
+
+    <!-- Channels Header -->
+    <text x="20" y="70" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="700" fill="#64748b" letter-spacing="1">ROOMS</text>
+
+    <!-- Channel Items -->
+    <g transform="translate(10, 85)">
+      <!-- Active Room -->
+      <rect width="200" height="34" rx="6" fill="rgba(56, 189, 248, 0.15)" stroke="rgba(56, 189, 248, 0.3)" stroke-width="1"/>
+      <text x="15" y="22" font-size="14">🏠</text>
+      <text x="38" y="22" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" font-weight="600" fill="#38bdf8"># general</text>
+      <circle cx="185" cy="17" r="4" fill="#38bdf8"/>
+
+      <!-- Other Rooms -->
+      <g transform="translate(0, 40)">
+        <text x="15" y="22" font-size="14">🎮</text>
+        <text x="38" y="22" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" fill="#94a3b8"># gaming</text>
+      </g>
+      <g transform="translate(0, 75)">
+        <text x="15" y="22" font-size="14">🎵</text>
+        <text x="38" y="22" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" fill="#94a3b8"># music</text>
+      </g>
+      <g transform="translate(0, 110)">
+        <text x="15" y="22" font-size="14">💻</text>
+        <text x="38" y="22" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" fill="#94a3b8"># coding</text>
+      </g>
+      <g transform="translate(0, 145)">
+        <text x="15" y="22" font-size="14">🎲</text>
+        <text x="38" y="22" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" fill="#94a3b8"># random</text>
+      </g>
+    </g>
+
+    <!-- User Profile Bar -->
+    <g transform="translate(10, 500)">
+      <rect width="200" height="48" rx="8" fill="#1e293b"/>
+      <circle cx="25" cy="24" r="14" fill="#38bdf8"/>
+      <text x="25" y="28" font-size="12" text-anchor="middle" fill="#0f172a" font-weight="bold">J</text>
+      <text x="48" y="20" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="600" fill="#f8fafc">Jose (You)</text>
+      <text x="48" y="36" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" fill="#64748b">0x71C...3a9f</text>
+      <circle cx="180" cy="24" r="4" fill="#10b981"/>
+    </g>
+  </g>
+
+  <!-- Central Chat Area -->
+  <g transform="translate(220, 38)">
+    <rect width="560" height="562" fill="#0b1120"/>
+
+    <!-- Room Topbar -->
+    <rect width="560" height="50" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+    <text x="20" y="30" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="15" font-weight="700" fill="#f8fafc"># general</text>
+    <rect x="95" y="18" width="135" height="20" rx="10" fill="rgba(6, 182, 212, 0.15)"/>
+    <text x="162" y="32" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="600" fill="#38bdf8" text-anchor="middle">🔒 AES-GCM-256 E2E</text>
+
+    <!-- Pinned Message Banner -->
+    <rect y="50" width="560" height="32" fill="rgba(30, 41, 59, 0.7)" stroke="#1e293b" stroke-width="1"/>
+    <text x="15" y="70" font-size="12">📌</text>
+    <text x="35" y="70" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" fill="#cbd5e1"><tspan font-weight="600">Pinned:</tspan> Welcome to BitWhisper! All data transmits P2P with zero intermediate logs.</text>
+
+    <!-- Message Stream -->
+    <!-- Message 1 (Peer) -->
+    <g transform="translate(20, 105)">
+      <circle cx="16" cy="16" r="16" fill="#8b5cf6"/>
+      <text x="16" y="21" font-size="12" text-anchor="middle" fill="#fff" font-weight="bold">A</text>
+      <text x="42" y="13" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="700" fill="#f8fafc">Alex</text>
+      <text x="100" y="13" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" fill="#64748b">10:42 AM · 0x82b...9d12</text>
+      <text x="42" y="33" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" fill="#cbd5e1">WebRTC data channel established. Public ECDH keys derived successfully!</text>
+      <!-- Reaction -->
+      <rect x="42" y="42" width="40" height="20" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <text x="62" y="56" font-size="11" text-anchor="middle">🚀 2</text>
+    </g>
+
+    <!-- Message 2 (You) -->
+    <g transform="translate(20, 185)">
+      <circle cx="16" cy="16" r="16" fill="#0284c7"/>
+      <text x="16" y="21" font-size="12" text-anchor="middle" fill="#fff" font-weight="bold">J</text>
+      <text x="42" y="13" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="700" fill="#38bdf8">Jose (You)</text>
+      <text x="110" y="13" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" fill="#64748b">10:43 AM</text>
+      <text x="42" y="33" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" fill="#cbd5e1">Awesome. Shared secret AES-GCM-256 key matches. Testing secure file transfer.</text>
+    </g>
+
+    <!-- Message 3 (File Transfer Card) -->
+    <g transform="translate(62, 240)">
+      <rect width="360" height="65" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <rect x="12" y="12" width="40" height="40" rx="6" fill="#0284c7" opacity="0.2"/>
+      <text x="32" y="36" font-size="16" text-anchor="middle">📄</text>
+      <text x="62" y="28" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="700" fill="#f8fafc">network-architecture.pdf</text>
+      <text x="62" y="44" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" fill="#94a3b8">2.4 MB · 150/150 Chunks · SHA-256 Verified</text>
+      <rect x="290" y="20" width="58" height="24" rx="4" fill="#10b981"/>
+      <text x="319" y="36" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="600" fill="#fff" text-anchor="middle">Save</text>
+    </g>
+
+    <!-- Chat Input Box -->
+    <g transform="translate(15, 495)">
+      <rect width="530" height="52" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <text x="20" y="31" font-size="16">📎</text>
+      <text x="50" y="32" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" fill="#64748b">Send an encrypted message to #general...</text>
+      <text x="440" y="31" font-size="16">😀</text>
+      <circle cx="495" cy="26" r="16" fill="#0284c7"/>
+      <text x="495" y="30" font-size="12" text-anchor="middle" fill="#fff">➤</text>
+    </g>
+  </g>
+
+  <!-- Right Sidebar (Peers in Room) -->
+  <g transform="translate(780, 38)">
+    <rect width="220" height="562" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+    
+    <text x="20" y="30" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="700" fill="#64748b" letter-spacing="1">ROOM PEERS (3/4)</text>
+
+    <!-- Peer 1 -->
+    <g transform="translate(15, 50)">
+      <circle cx="16" cy="16" r="14" fill="#0284c7"/>
+      <text x="16" y="20" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">J</text>
+      <circle cx="26" cy="26" r="4" fill="#10b981"/>
+      <text x="38" y="15" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="600" fill="#f8fafc">Jose (You)</text>
+      <text x="38" y="28" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" fill="#64748b">Local Peer</text>
+    </g>
+
+    <!-- Peer 2 -->
+    <g transform="translate(15, 95)">
+      <circle cx="16" cy="16" r="14" fill="#8b5cf6"/>
+      <text x="16" y="20" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">A</text>
+      <circle cx="26" cy="26" r="4" fill="#10b981"/>
+      <text x="38" y="15" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="600" fill="#f8fafc">Alex</text>
+      <text x="38" y="28" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" fill="#10b981">P2P Connected</text>
+    </g>
+
+    <!-- Peer 3 -->
+    <g transform="translate(15, 140)">
+      <circle cx="16" cy="16" r="14" fill="#ec4899"/>
+      <text x="16" y="20" font-size="11" text-anchor="middle" fill="#fff" font-weight="bold">S</text>
+      <circle cx="26" cy="26" r="4" fill="#10b981"/>
+      <text x="38" y="15" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="600" fill="#f8fafc">Sarah</text>
+      <text x="38" y="28" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" fill="#10b981">P2P Connected</text>
+    </g>
+
+    <!-- Cryptographic Status Panel -->
+    <g transform="translate(15, 230)">
+      <rect width="190" height="150" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <text x="15" y="25" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="700" fill="#38bdf8">CRYPTO PIPELINE</text>
+      <line x1="15" y1="35" x2="175" y2="35" stroke="#334155" stroke-width="1"/>
+      
+      <text x="15" y="55" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" fill="#94a3b8">Key Exchange:</text>
+      <text x="15" y="70" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="600" fill="#f8fafc">ECDH P-256 (NIST)</text>
+
+      <text x="15" y="95" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" fill="#94a3b8">Symmetric Cipher:</text>
+      <text x="15" y="110" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="600" fill="#f8fafc">AES-GCM-256 bit</text>
+
+      <text x="15" y="132" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" fill="#10b981">✓ Web Crypto Native API</text>
+    </g>
+  </g>
+</svg>

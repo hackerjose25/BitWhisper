@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="100%" height="100%" fill="none">
+  <defs>
+    <linearGradient id="lpBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1120"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="cyanPurple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+    <radialGradient id="lpGlow" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Browser Frame -->
+  <rect width="1000" height="600" rx="12" fill="url(#lpBg)" stroke="#1e293b" stroke-width="2"/>
+  
+  <!-- Browser Header -->
+  <rect width="1000" height="40" rx="12" fill="#0f172a"/>
+  <circle cx="25" cy="20" r="5" fill="#ef4444"/>
+  <circle cx="45" cy="20" r="5" fill="#f59e0b"/>
+  <circle cx="65" cy="20" r="5" fill="#10b981"/>
+  <rect x="180" y="8" width="640" height="24" rx="6" fill="#1e293b"/>
+  <text x="500" y="24" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">https://localhost:5173 — BitWhisper Web3 P2P</text>
+
+  <!-- Glow effect -->
+  <rect y="40" width="1000" height="560" fill="url(#lpGlow)"/>
+
+  <!-- App Navbar -->
+  <g transform="translate(0, 40)">
+    <rect width="1000" height="55" fill="rgba(15, 23, 42, 0.7)" stroke="#1e293b" stroke-width="1"/>
+    <!-- Logo -->
+    <circle cx="50" cy="28" r="14" fill="#0284c7" opacity="0.2"/>
+    <path d="M46 22 L54 22 C54 29 46 33 46 33 C46 33 38 29 38 22 Z" fill="none" stroke="#38bdf8" stroke-width="2"/>
+    <text x="75" y="33" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="18" font-weight="700" fill="#f8fafc">Bit<tspan fill="#38bdf8">Whisper</tspan></text>
+    
+    <!-- Nav Links -->
+    <text x="500" y="32" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" fill="#94a3b8" text-anchor="middle">Features · Architecture · Security · Rooms</text>
+
+    <!-- Connect Wallet Button -->
+    <rect x="850" y="12" width="125" height="32" rx="16" fill="#0284c7"/>
+    <text x="912" y="32" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">🦊 Connect Wallet</text>
+  </g>
+
+  <!-- Hero Content -->
+  <g transform="translate(500, 160)" text-anchor="middle">
+    <!-- Category Pill -->
+    <rect x="-120" y="-12" width="240" height="24" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="0" y="4" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="600" fill="#38bdf8" letter-spacing="1">ZERO LOGS · PURE PRIVACY</text>
+
+    <text x="0" y="55" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="34" font-weight="800" fill="url(#cyanPurple)">Your Conversations, Truly Private.</text>
+    <text x="0" y="90" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="14" fill="#94a3b8">End-to-end encrypted messaging and peer-to-peer file sharing with Sign-In with Ethereum.</text>
+  </g>
+
+  <!-- 4 Feature Cards -->
+  <g transform="translate(60, 290)">
+    <!-- Card 1 -->
+    <g transform="translate(0, 0)">
+      <rect width="200" height="150" rx="10" fill="rgba(30, 41, 59, 0.5)" stroke="#334155" stroke-width="1"/>
+      <rect x="15" y="15" width="34" height="34" rx="8" fill="rgba(6, 182, 212, 0.15)"/>
+      <text x="32" y="37" font-size="16" text-anchor="middle">🔒</text>
+      <text x="15" y="75" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="14" font-weight="700" fill="#f1f5f9">E2E Encryption</text>
+      <text x="15" y="100" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" fill="#94a3b8">AES-GCM-256 with</text>
+      <text x="15" y="118" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" fill="#94a3b8">ECDH key exchange.</text>
+    </g>
+
+    <!-- Card 2 -->
+    <g transform="translate(225, 0)">
+      <rect width="200" height="150" rx="10" fill="rgba(30, 41, 59, 0.5)" stroke="#334155" stroke-width="1"/>
+      <rect x="15" y="15" width="34" height="34" rx="8" fill="rgba(168, 85, 247, 0.15)"/>
+      <text x="32" y="37" font-size="16" text-anchor="middle">🌐</text>
+      <text x="15" y="75" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="14" font-weight="700" fill="#f1f5f9">P2P Mesh Network</text>
+      <text x="15" y="100" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" fill="#94a3b8">Direct WebRTC data channels,</text>
+      <text x="15" y="118" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" fill="#94a3b8">no intermediary relay.</text>
+    </g>
+
+    <!-- Card 3 -->
+    <g transform="translate(450, 0)">
+      <rect width="200" height="150" rx="10" fill="rgba(30, 41, 59, 0.5)" stroke="#334155" stroke-width="1"/>
+      <rect x="15" y="15" width="34" height="34" rx="8" fill="rgba(16, 185, 129, 0.15)"/>
+      <text x="32" y="37" font-size="16" text-anchor="middle">🛡️</text>
+      <text x="15" y="75" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="14" font-weight="700" fill="#f1f5f9">Web3 Identity</text>
+      <text x="15" y="100" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" fill="#94a3b8">SIWE (ERC-4361) sign-in</text>
+      <text x="15" y="118" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" fill="#94a3b8">via MetaMask gas-free.</text>
+    </g>
+
+    <!-- Card 4 -->
+    <g transform="translate(675, 0)">
+      <rect width="200" height="150" rx="10" fill="rgba(30, 41, 59, 0.5)" stroke="#334155" stroke-width="1"/>
+      <rect x="15" y="15" width="34" height="34" rx="8" fill="rgba(244, 63, 94, 0.15)"/>
+      <text x="32" y="37" font-size="16" text-anchor="middle">📁</text>
+      <text x="15" y="75" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="14" font-weight="700" fill="#f1f5f9">Secure File Sharing</text>
+      <text x="15" y="100" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" fill="#94a3b8">16KB chunked streams with</text>
+      <text x="15" y="118" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" fill="#94a3b8">SHA-256 verification.</text>
+    </g>
+  </g>
+
+  <!-- Modal Overlay Snippet (Web3 Login preview) -->
+  <g transform="translate(320, 460)">
+    <rect width="360" height="100" rx="10" fill="#0f172a" stroke="#0284c7" stroke-width="1.5" filter="drop-shadow(0 10px 20px rgba(0,0,0,0.6))"/>
+    <circle cx="35" cy="50" r="18" fill="rgba(245, 158, 11, 0.15)"/>
+    <text x="35" y="55" font-size="16" text-anchor="middle">🦊</text>
+    <text x="65" y="42" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" font-weight="700" fill="#f8fafc">Sign-In with Ethereum (SIWE)</text>
+    <text x="65" y="60" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" fill="#94a3b8">0x71C...3a9f connected · Click to sign gasless proof</text>
+    <rect x="255" y="35" width="85" height="28" rx="6" fill="#10b981"/>
+    <text x="297" y="53" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="600" fill="#ffffff" text-anchor="middle">Sign &amp; Enter</text>
+  </g>
+</svg>
